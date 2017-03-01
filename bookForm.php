@@ -6,11 +6,9 @@
     
     $authors = $conn->query($sql);
     
-    //Check if a book_id was supplied in the URL Query Parameter 
     if (isset($_GET['book_id'])) {
       $book_id = $_GET['book_id'];
       
-    //Query DB for details on that book
     $bookSQL = "SELECT * FROM books where id = $book_id";
     $book = $conn->query($bookSQL)->fetch_assoc();
     

@@ -19,7 +19,9 @@
     <head>
         <title>bookApp</title>
     </head>
+    
     <?php include 'head.php' ?>
+    
     <body>
         <?php include 'nav.php' ?>
         <div class="container">

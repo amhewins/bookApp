@@ -6,11 +6,9 @@
     
     $authors = $conn->query($sql);
     
-    //Check if a author_id was supplied in the URL Query Parameter 
     if (isset($_GET['author_id'])) {
       $author_id = $_GET['author_id'];
       
-    //Query DB for details on that book
     $authorSQL = "SELECT * FROM authors where id = $author_id";
     $author = $conn->query($authorSQL)->fetch_assoc();
     
@@ -23,8 +21,6 @@
   <head>
         <?php include 'head.php'?>
         <title>bookApp Author Form</title>
-        
-        <link href="authorForm.css" rel="stylesheet">
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         

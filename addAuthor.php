@@ -26,9 +26,6 @@ else {
     
     <title>bookApp Book Form</title>
 
-    <!-- Custom styles for this template -->
-    <link href="style.css" rel="stylesheet">
-
   </head>
 
   <body>

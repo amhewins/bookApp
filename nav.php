@@ -14,6 +14,6 @@
         <li><a href="authors.php">Authors</a></li>
         <li><a href="bookForm.php">Add Book</a></li>
       </ul>
-    </div><!--/.nav-collapse -->
+    </div>
   </div>
 </nav>
