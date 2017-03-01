@@ -11,7 +11,7 @@
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li><a href="authorForm.php">Add Author</a></li>
+        <li><a href="authors.php">Authors</a></li>
         <li><a href="bookForm.php">Add Book</a></li>
       </ul>
     </div><!--/.nav-collapse -->

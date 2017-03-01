@@ -2,13 +2,22 @@
 
     include 'dbConnection.php';
 
-$author_id = $_POST['author_id'];
-$title = $_POST['title'];
-$year = $_POST['year'];
-$rating = $_POST['rating'];
+$author_id = $conn->real_escape_string($_POST['author_id']);
+$title = $conn->real_escape_string($_POST['title']);
+$year = $conn->real_escape_string($_POST['year']);
+$rating = $conn->real_escape_string($_POST['rating']);
 
-  $sql = "INSERT INTO books (author_id, title, year, rating)
-  VALUES ('$author_id', '$title', '$year', '$rating')";
+if (isset($_POST['book_id'])) {
+    $book_id = $_POST['book_id'];
+    $sql =  "UPDATE books SET title='$title', year='$year', rating='$rating'
+             WHERE id = $book_id";
+}             
+else {
+    $sql = "INSERT INTO books (author_id, title, year, rating)
+        VALUES ('$author_id', '$title', '$year', '$rating')";
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -42,5 +51,6 @@ $rating = $_POST['rating'];
       Rating: <?php echo $rating ?><br>
       </div>
     </div>
+    <?php include 'footer.php' ?>
   </body>
 </html>

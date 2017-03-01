@@ -1,12 +1,22 @@
 <?php
     include 'dbConnection.php';
 //print_r($conn);
-$first = $_POST['first'];
-$last = $_POST['last'];
-$age = $_POST['age'];
-$education = $_POST['education'];
-$sql = "INSERT INTO authors (first, last, age, education)
-VALUES ('$first', '$last', '$age', '$education')";
+$first = $conn->real_escape_string($_POST['first']);
+$last = $conn->real_escape_string($_POST['last']);
+$age = $conn->real_escape_string($_POST['age']);
+$education = $conn->real_escape_string($_POST['education']);
+
+if (isset($_POST['author_id'])) {
+    $author_id = $_POST['author_id'];
+    $sql =  "UPDATE authors SET first='$first', last='$last', age='$age', education='$education'
+             WHERE id = $author_id";
+}             
+else {
+    $sql = "INSERT INTO authors (first, last, age, education)
+        VALUES ('$first', '$last', '$age', '$education')";
+
+}
+
 ?>
 
 <!DOCTYPE html>
